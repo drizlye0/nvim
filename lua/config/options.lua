@@ -21,3 +21,4 @@ opt.cursorline = true
 opt.scrolloff = 10
 opt.shiftround = true
 opt.tabstop = 2
+opt.clipboard = "unnamedplus"
