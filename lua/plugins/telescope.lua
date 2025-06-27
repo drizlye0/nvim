@@ -15,6 +15,7 @@ return {
 				find_files = {
 					hidden = true,
 					find_command = { "rg", "--files", "--iglob", "!.git", "--hidden" },
+					previewer = false,
 				},
 			},
 		})

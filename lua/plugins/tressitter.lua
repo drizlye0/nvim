@@ -12,6 +12,7 @@ return {
 			ignore_install = { "javascript" },
 			modules = {},
 			highlight = {
+				disable = { "tsx", "typescript", "javascript" },
 				enable = { "go" },
 				additional_vim_regex_highlighting = false,
 			},
