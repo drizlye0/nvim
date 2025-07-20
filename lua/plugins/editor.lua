@@ -9,16 +9,29 @@ return {
 	{
 		"stevearc/conform.nvim",
 		event = "BufWritePre",
+		lazy = false,
 		config = function()
 			require("conform").setup({
 				formatters_by_ft = {
+					javascript = { "prettier" },
+					typescript = { "prettier" },
+					typescriptreact = { "prettier" },
+					javascriptreact = { "prettier" },
 					lua = { "stylua" },
 					go = { "gofmt" },
 				},
-				format_on_save = {
-					timeout_ms = 400,
-					lsp_format = "fallback",
-				},
+
+				vim.api.nvim_create_user_command("Format", function(args)
+					local range = nil
+					if args.count ~= -1 then
+						local end_line = vim.api.nvim_buf_get_lines(0, args.line2 - 1, args.line2, true)[1]
+						range = {
+							start = { args.line1, 0 },
+							["end"] = { args.line2, end_line:len() },
+						}
+					end
+					require("conform").format({ async = true, lsp_format = "fallback", range = range })
+				end, { range = true }),
 			})
 		end,
 	},
@@ -47,20 +60,24 @@ return {
 		end,
 	},
 	{
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v3.x",
+		"nvim-tree/nvim-tree.lua",
+		version = "*",
+		lazy = false,
 		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-			"MunifTanjim/nui.nvim",
-			-- {"3rd/image.nvim", opts = {}}, -- Optional image support in preview window: See `# Preview Mode` for more information
+			"nvim-tree/nvim-web-devicons",
 		},
-		lazy = false, -- neo-tree will lazily load itself
-		---@module "neo-tree"
-		---@type neotree.Config?
-		opts = {
-			-- fill any relevant options here
-		},
+		config = function()
+			require("nvim-tree").setup({
+				update_focused_file = {
+					enable = true,
+					update_root = {
+						enable = false,
+						ignore_list = {},
+					},
+					exclude = false,
+				},
+			})
+		end,
 	},
 	{
 		"windwp/nvim-ts-autotag",
