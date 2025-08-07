@@ -41,3 +41,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "gn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 	end,
 })
+
+vim.api.nvim_create_user_command("HideDiagnostics", function()
+	vim.diagnostic.disable()
+end, {})
