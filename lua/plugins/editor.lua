@@ -19,6 +19,8 @@ return {
 					javascriptreact = { "prettier" },
 					lua = { "stylua" },
 					go = { "gofmt" },
+     c = { "clang-format"},
+     cpp = { "clang-format" },
 				},
 
 				vim.api.nvim_create_user_command("Format", function(args)

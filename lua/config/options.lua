@@ -3,7 +3,6 @@ local opt = vim.opt
 opt.number = true
 opt.relativenumber = true
 opt.numberwidth = 3
-opt.shiftwidth = 2
 opt.signcolumn = "yes"
 opt.guicursor = "i:block"
 opt.cursorline = false
@@ -19,5 +18,11 @@ opt.list = false
 opt.inccommand = "split"
 opt.scrolloff = 10
 opt.shiftround = true
-opt.tabstop = 2
 opt.clipboard = "unnamedplus"
+
+vim.opt.tabstop = 1
+vim.opt.softtabstop = 1
+vim.opt.shiftwidth = 1
+vim.opt.expandtab = true
+
+vim.opt.smartindent = true
