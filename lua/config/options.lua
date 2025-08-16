@@ -20,9 +20,8 @@ opt.scrolloff = 10
 opt.shiftround = true
 opt.clipboard = "unnamedplus"
 
-vim.opt.tabstop = 1
-vim.opt.softtabstop = 1
-vim.opt.shiftwidth = 1
 vim.opt.expandtab = true
-
 vim.opt.smartindent = true
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+

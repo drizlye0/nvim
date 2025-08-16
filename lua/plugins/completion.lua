@@ -33,19 +33,12 @@ return {
 					},
 				},
 				completion = {
-					-- menu = {
-					--     border = nil,
-					--     scrolloff = 1,
-					--     scrollbar = false,
-					--     draw = {
-					--         columns = {
-					--             { "kind_icon" },
-					--             { "label",      "label_description", gap = 1 },
-					--             { "kind" },
-					--             { "source_name" },
-					--         },
-					--     },
-					-- },
+					menu = {
+						draw = {
+							columns = { { "label", "label_description", gap = 1 }, { "kind_icon", "kind" } },
+							treesitter = { "lsp" },
+						},
+					},
 					documentation = {
 						window = {
 							border = nil,

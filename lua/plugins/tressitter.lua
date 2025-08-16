@@ -16,7 +16,6 @@ return {
 				enable = { "go" },
 				additional_vim_regex_highlighting = false,
 			},
-			indent = { enable = true },
 			auto_install = true,
 			ensure_installed = {
 				"bash",

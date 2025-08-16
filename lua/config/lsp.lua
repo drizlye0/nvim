@@ -1,7 +1,6 @@
 vim.lsp.enable({
 	"lua_ls",
 	"gopls",
-	"clangd",
 	"vtsls",
 	"jsonls",
 })
