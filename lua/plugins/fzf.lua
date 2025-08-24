@@ -9,7 +9,11 @@ return {
 		fzf.setup({
 			"hide",
 			winopts = {
+				treesitter = {
+					enabled = false,
+				},
 				preview = {
+					default = "bat",
 					layout = "vertical",
 				},
 			},
@@ -17,6 +21,6 @@ return {
 
 		vim.keymap.set("n", "<leader>ff", fzf.files, { desc = "Fzf find files" })
 		vim.keymap.set("n", "<leader>fw", fzf.grep, { desc = "Fzf live grep" })
-    vim.keymap.set("n", "<leader>fz", fzf.zoxide, { desc = "Fzf zoxide" })
+		vim.keymap.set("n", "<leader>fz", fzf.zoxide, { desc = "Fzf zoxide" })
 	end,
 }

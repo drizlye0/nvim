@@ -3,7 +3,7 @@ vim.lsp.enable({
 	"gopls",
 	"vtsls",
 	"jsonls",
-  "tailwindcss",
+	"tailwindcss",
 })
 
 vim.diagnostic.config({
@@ -33,6 +33,8 @@ vim.diagnostic.config({
 vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(args)
 		local opts = { buffer = args.buf }
+		local client = vim.lsp.get_client_by_id(args.data.client_id)
+		client.server_capabilities.semanticTokensProvider = nil
 
 		vim.keymap.set("n", "gw", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 		vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)

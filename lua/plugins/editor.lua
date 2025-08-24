@@ -1,10 +1,18 @@
 return {
 	{
 		"windwp/nvim-autopairs",
+		enabled = false,
 		event = "InsertEnter",
 		config = true,
 		-- use opts = {} for passing setup options
 		-- this is equivalent to setup({}) function
+	},
+	{
+		"echasnovski/mini.pairs",
+		version = false,
+		config = function()
+			require("mini.pairs").setup()
+		end,
 	},
 	{
 		"stevearc/conform.nvim",
@@ -21,8 +29,8 @@ return {
 					go = { "gofmt" },
 					c = { "clang-format" },
 					cpp = { "clang-format" },
-          h = {"clang-format"},
-          hpp = { "clang-format" },
+					h = { "clang-format" },
+					hpp = { "clang-format" },
 				},
 
 				vim.api.nvim_create_user_command("Format", function(args)

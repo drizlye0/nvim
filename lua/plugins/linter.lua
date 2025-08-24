@@ -1,32 +1,51 @@
 return {
-	"mfussenegger/nvim-lint",
-	event = {
-		"BufReadPre",
-		"BufNewFile",
-	},
-	config = function()
-		local lint = require("lint")
+	{
+		"mfussenegger/nvim-lint",
+		enabled = false,
+		event = {
+			"BufReadPre",
+			"BufNewFile",
+		},
+		config = function()
+			local lint = require("lint")
 
-		lint.linters_by_ft = {
-			javascript = { "eslint_d" },
-			typescript = { "eslint_d" },
-			javascriptreact = { "eslint_d" },
-			typescriptreact = { "eslint_d" },
-			go = { "golangci-lint" },
-		}
+			lint.linters_by_ft = {
+				javascript = { "eslint_d" },
+				typescript = { "eslint_d" },
+				javascriptreact = { "eslint_d" },
+				typescriptreact = { "eslint_d" },
+				go = { "golangci-lint" },
+			}
 
-		local lint_augrup = vim.api.nvim_create_augroup("lint", { clear = true })
+			local lint_augrup = vim.api.nvim_create_augroup("lint", { clear = true })
 
-		vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
-			pattern = { "*.ts", "*.js", "*.tsx", "*.jsx", "*.go" },
-			group = lint_augrup,
-			callback = function()
+			vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
+				pattern = { "*.ts", "*.js", "*.tsx", "*.jsx", "*.go" },
+				group = lint_augrup,
+				callback = function()
+					lint.try_lint()
+				end,
+			})
+
+			vim.keymap.set("n", "<leader>l", function()
 				lint.try_lint()
-			end,
-		})
+			end, { desc = "Trigger linting for current file" })
+		end,
+	},
+	{
+		"dense-analysis/ale",
+		config = function()
+			-- Configuration goes here.
+			local g = vim.g
 
-		vim.keymap.set("n", "<leader>l", function()
-			lint.try_lint()
-		end, { desc = "Trigger linting for current file" })
-	end,
+			g.ale_linters = {
+				lua = { "lua_language_server" },
+
+				javascript = { "eslint" },
+				typescript = { "eslint" },
+				javascriptreact = { "eslint" },
+				typescriptreact = { "eslint" },
+			}
+		end,
+	},
 }
