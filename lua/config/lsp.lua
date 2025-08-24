@@ -3,12 +3,13 @@ vim.lsp.enable({
 	"gopls",
 	"vtsls",
 	"jsonls",
+  "tailwindcss",
 })
 
 vim.diagnostic.config({
 	virtual_text = true,
 	underline = true,
-	update_in_insert = true,
+	update_in_insert = false,
 	severity_sort = true,
 	float = {
 		border = "rounded",
@@ -35,6 +36,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 		vim.keymap.set("n", "gw", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 		vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+		vim.keymap.set("n", "gv", "<cmd>vsplit | lua vim.lsp.buf.definition()<CR>", opts)
 		vim.keymap.set("n", "gs", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 		vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 		vim.keymap.set("n", "gn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
