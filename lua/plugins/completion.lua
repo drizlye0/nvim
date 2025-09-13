@@ -8,6 +8,7 @@ return {
 		version = "*",
 		config = function()
 			require("blink.cmp").setup({
+				fuzzy = { implementation = "prefer_rust" },
 				snippets = { preset = "luasnip" },
 				signature = { enabled = true },
 				appearance = {

@@ -21,8 +21,8 @@ return {
 					go = { "gofmt" },
 					c = { "clang-format" },
 					cpp = { "clang-format" },
-          h = {"clang-format"},
-          hpp = { "clang-format" },
+					h = { "clang-format" },
+					hpp = { "clang-format" },
 				},
 
 				vim.api.nvim_create_user_command("Format", function(args)
@@ -72,6 +72,31 @@ return {
 		},
 		config = function()
 			require("nvim-tree").setup({
+				renderer = {
+					icons = {
+						show = {
+							git = true,
+							file = false,
+							folder = false,
+							folder_arrow = true,
+						},
+						glyphs = {
+							folder = {
+								arrow_closed = "⏵",
+								arrow_open = "⏷",
+							},
+							git = {
+								unstaged = "✗",
+								staged = "✓",
+								unmerged = "⌥",
+								renamed = "➜",
+								untracked = "★",
+								deleted = "⊖",
+								ignored = "◌",
+							},
+						},
+					},
+				},
 				update_focused_file = {
 					enable = true,
 					update_root = {
