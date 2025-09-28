@@ -3,6 +3,7 @@ vim.lsp.enable({
 	"gopls",
 	"jsonls",
   "tailwindcss",
+  "clangd",
 })
 
 vim.diagnostic.config({
