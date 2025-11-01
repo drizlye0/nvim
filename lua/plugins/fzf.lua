@@ -13,11 +13,13 @@ return {
 					enabled = false,
 				},
 				preview = {
-          default = "bat",
+					default = "bat",
 					layout = "vertical",
 				},
 			},
 		})
+
+		fzf.register_ui_select()
 
 		vim.keymap.set("n", "<leader>ff", fzf.files, { desc = "Fzf find files" })
 		vim.keymap.set("n", "<leader>fw", fzf.grep, { desc = "Fzf live grep" })

@@ -1,10 +1,21 @@
 return {
-	{ "L3MON4D3/LuaSnip", keys = {} },
 	{
-		"saghen/blink.cmp",
+		"L3MON4D3/LuaSnip",
+
 		dependencies = {
 			"rafamadriz/friendly-snippets",
 		},
+		-- follow latest release.
+		version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+		-- install jsregexp (optional!).
+		build = "make install_jsregexp",
+		config = function()
+			require("luasnip.loaders.from_vscode").lazy_load()
+			require("luasnip").filetype_extend("dart", { "flutter" })
+		end,
+	},
+	{
+		"saghen/blink.cmp",
 		version = "*",
 		config = function()
 			require("blink.cmp").setup({
@@ -16,7 +27,7 @@ return {
 					nerd_font_variant = "normal",
 				},
 				sources = {
-					default = { "lsp", "path", "snippets", "buffer" },
+					default = { "snippets", "lsp", "path", "buffer" },
 					providers = {
 						cmdline = {
 							min_keyword_length = 2,
@@ -51,8 +62,6 @@ return {
 					},
 				},
 			})
-
-			require("luasnip.loaders.from_vscode").lazy_load()
 		end,
 	},
 	{

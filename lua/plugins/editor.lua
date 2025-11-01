@@ -61,6 +61,11 @@ return {
 			vim.keymap.set("t", "<C-k>", require("smart-splits").move_cursor_up)
 			vim.keymap.set("t", "<C-l>", require("smart-splits").move_cursor_right)
 			vim.keymap.set("t", "<C-\\>", require("smart-splits").move_cursor_previous)
+
+			vim.keymap.set("n", "<leader><leader>h", require("smart-splits").swap_buf_left)
+			vim.keymap.set("n", "<leader><leader>j", require("smart-splits").swap_buf_down)
+			vim.keymap.set("n", "<leader><leader>k", require("smart-splits").swap_buf_up)
+			vim.keymap.set("n", "<leader><leader>l", require("smart-splits").swap_buf_right)
 		end,
 	},
 	{
