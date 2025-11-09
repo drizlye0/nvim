@@ -2,6 +2,7 @@ return {
 	{
 
 		"zenbones-theme/zenbones.nvim",
+    enabled = false,
 		-- Optionally install Lush. Allows for more configuration or extending the colorscheme
 		-- If you don't want to install lush, make sure to set g:zenbones_compat = 1
 		-- In Vim, compat mode is turned on as Lush only works in Neovim.
@@ -17,6 +18,7 @@ return {
 	},
 	{
 		"vague2k/vague.nvim",
+    enabled = false,
 		config = function()
 			-- NOTE: you do not need to call setup if you don't want to.
 			require("vague").setup({
