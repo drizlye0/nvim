@@ -17,6 +17,12 @@ return {
 					layout = "vertical",
 				},
 			},
+      file_ignore_patterns = {
+        "node_modules/",
+        ".dart_tool/",
+        ".idea/",
+        "build/"
+      }
 		})
 
 		fzf.register_ui_select()

@@ -2,7 +2,7 @@ return {
 	{
 
 		"zenbones-theme/zenbones.nvim",
-    enabled = false,
+		enabled = false,
 		-- Optionally install Lush. Allows for more configuration or extending the colorscheme
 		-- If you don't want to install lush, make sure to set g:zenbones_compat = 1
 		-- In Vim, compat mode is turned on as Lush only works in Neovim.
@@ -18,7 +18,7 @@ return {
 	},
 	{
 		"vague2k/vague.nvim",
-    enabled = false,
+		enabled = false,
 		config = function()
 			-- NOTE: you do not need to call setup if you don't want to.
 			require("vague").setup({
@@ -31,8 +31,18 @@ return {
 		priority = 1000,
 		config = function()
 			require("gruvbox").setup({
+				undercurl = true,
+				underline = true,
+				bold = true,
+				italic = {
+					strings = true,
+					emphasis = true,
+					comments = true,
+					operators = false,
+					folds = true,
+				},
 				contrast = "hard",
-				transparent_mode = true
+				transparent_mode = true,
 			})
 
 			vim.cmd("colorscheme gruvbox")
