@@ -1,4 +1,11 @@
 return {
+	{
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		branch = "main",
+		init = function()
+			vim.g.no_plugin_maps = true
+		end,
+	},
 	"nvim-treesitter/nvim-treesitter",
 	version = false,
 	build = ":TSUpdate",
@@ -7,7 +14,7 @@ return {
 		"nvim-treesitter/nvim-treesitter-textobjects",
 	},
 	config = function()
-		require("nvim-treesitter.configs").setup({
+		require("nvim-treesitter").setup({
 			sync_install = false,
 			ignore_install = { "javascript" },
 			modules = {},
@@ -16,9 +23,9 @@ return {
 				enable = { "go" },
 				additional_vim_regex_highlighting = false,
 			},
-      indent = {
-        enable = true,
-      },
+			indent = {
+				enable = true,
+			},
 			ensure_installed = {
 				"bash",
 				"c",
