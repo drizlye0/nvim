@@ -4,6 +4,8 @@ vim.lsp.enable({
 	"jsonls",
   "tailwindcss",
   "clangd",
+  "neocmake",
+  "tsgo"
 })
 
 vim.diagnostic.config({

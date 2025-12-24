@@ -4,4 +4,5 @@ return{
   ft = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
   dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
   opts = {},
+  enabled = false,
 }
