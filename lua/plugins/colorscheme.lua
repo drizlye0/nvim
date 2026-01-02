@@ -8,6 +8,7 @@ return {
 		-- In Vim, compat mode is turned on as Lush only works in Neovim.
 		dependencies = "rktjmp/lush.nvim",
 		lazy = false,
+    enabled = false,
 		priority = 1000,
 		-- you can set set configuration options here
 		config = function()
