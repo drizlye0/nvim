@@ -4,6 +4,9 @@ local options = {
     css = { "prettier" },
     html = { "prettier" },
     go = { "gofumpt" },
+    tsx = { "prettier" },
+    ts = { "prettier" },
+    cpp = { "clang-format" },
   },
 
   -- format_on_save = {

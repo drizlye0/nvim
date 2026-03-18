@@ -47,7 +47,12 @@ map("n", "<leader>tv", function()
   require("nvchad.term").toggle { pos = "vsp", id = "vtoggleTerm" }
 end, { desc = "New toggleable vertical term" })
 
+map("n", "<leader>ft", function()
+  require("nvchad.themes").open()
+end, { desc = "telescope nvchad themes" })
+
 map("n", "<leader>h", "<cmd>split<CR>", { desc = "Horizontal split" })
 map("n", "<leader>v", "<cmd>vsplit<CR>", { desc = "Vertical split" })
 map("t", "<esc><esc>", "<C-\\><C-n>")
 map("n", "gw", "<cmd>lua vim.diagnostic.open_float()<CR>")
+map("n", "gs", "<cmd>LspClangdSwitchSourceHeader<CR>")
