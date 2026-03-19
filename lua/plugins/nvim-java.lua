@@ -3,7 +3,7 @@ return {
   lazy = true,
   ft = "java",
   config = function ()
-    require("java").setup()
-    require("lspconfig").jdtls.setup{}
+    -- require("java").setup()
+    -- require("lspconfig").jdtls.setup{}
   end
 }

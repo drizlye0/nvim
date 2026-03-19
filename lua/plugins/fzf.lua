@@ -14,15 +14,15 @@ return {
 				},
 				preview = {
 					default = "bat",
-					layout = "vertical",
 				},
 			},
-      file_ignore_patterns = {
-        "node_modules/",
-        ".dart_tool/",
-        ".idea/",
-        "build/"
-      }
+			file_ignore_patterns = {
+				"node_modules/",
+				".dart_tool/",
+				".idea/",
+				"build/",
+				".git",
+			},
 		})
 
 		fzf.register_ui_select()

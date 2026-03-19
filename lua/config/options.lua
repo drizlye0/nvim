@@ -19,6 +19,7 @@ opt.inccommand = "split"
 opt.scrolloff = 10
 opt.shiftround = true
 opt.clipboard = "unnamedplus"
+opt.laststatus = 3
 
 vim.opt.expandtab = true
 vim.opt.smartindent = true
@@ -26,4 +27,5 @@ vim.opt.softtabstop = 2
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.smarttab = true
+vim.opt.syntax = "on"
 

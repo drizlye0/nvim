@@ -8,3 +8,5 @@ map("n", "<leader>f", "<cmd>Format<CR>")
 map("n", "dw", 'vb"_d')
 map("n", "<leader>v", "<cmd>vsplit<CR>")
 map("n", "<leader>g", "<cmd>split<CR>")
+map("n", "<leader>rn", ":IncRename ")
+

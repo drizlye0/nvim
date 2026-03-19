@@ -26,6 +26,7 @@ return {
 		"--completion-style=detailed",
 		"--function-arg-placeholders",
 		"--fallback-style=llvm",
+		"--query-driver=/usr/bin/c++",
 	},
 	init_options = {
 		usePlaceholders = true,

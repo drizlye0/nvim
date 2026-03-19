@@ -6,8 +6,9 @@ return {
 			vim.g.no_plugin_maps = true
 		end,
 	},
-	"nvim-treesitter/nvim-treesitter",
-	lazy = false,
-	branch = "main",
-	build = ":TSUpdate",
+{
+  'nvim-treesitter/nvim-treesitter',
+  lazy = false,
+  build = ':TSUpdate'
+}
 }
