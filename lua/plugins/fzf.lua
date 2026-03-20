@@ -9,11 +9,8 @@ return {
 		fzf.setup({
 			"hide",
 			winopts = {
-				tressitter = {
+				treesitter = {
 					enabled = false,
-				},
-				preview = {
-					default = "bat",
 				},
 			},
 			file_ignore_patterns = {
@@ -22,6 +19,19 @@ return {
 				".idea/",
 				"build/",
 				".git",
+			},
+
+			previewers = {
+				bat = {
+					cmd = "bat",
+					args = "--theme=base16",
+				},
+
+				builtin = {
+					treesitter = {
+						enabled = false,
+					},
+				},
 			},
 		})
 
