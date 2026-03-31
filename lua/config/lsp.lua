@@ -1,10 +1,21 @@
+vim.lsp.config.clangd = {
+	cmd = {
+		"clangd",
+		"--function-arg-placeholders=0",
+		"--clang-tidy",
+		"--background-index",
+		"--offset-encoding=utf-8",
+		"--header-insertion=never",
+	},
+}
+
 vim.lsp.enable({
 	"lua_ls",
 	"gopls",
 	"jsonls",
-  "tailwindcss",
-  "clangd",
-  "neocmake",
+	"tailwindcss",
+	"clangd",
+	"neocmake",
 })
 
 vim.diagnostic.config({
