@@ -49,7 +49,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "gw", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 		vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 		vim.keymap.set("n", "gv", "<cmd>vsplit | lua vim.lsp.buf.definition()<CR>", opts)
-		vim.keymap.set("n", "gs", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+		-- vim.keymap.set("n", "gs", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 		vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 		-- vim.keymap.set("n", "gn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 		vim.keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)

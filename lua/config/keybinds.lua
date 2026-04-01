@@ -17,3 +17,4 @@ map("n", "<leader>v", "<cmd>vsplit<CR>")
 map("n", "<leader>g", "<cmd>split<CR>")
 map("n", "<leader>rn", ":IncRename ")
 
+map("n", "gs", "<cmd>LspClangdSwitchSourceHeader<CR>")
