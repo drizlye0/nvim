@@ -15,6 +15,7 @@ vim.lsp.enable({
 	"jsonls",
 	"tailwindcss",
 	"clangd",
+  "tsgo",
 	"neocmake",
 })
 
