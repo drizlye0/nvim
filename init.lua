@@ -18,6 +18,7 @@ vim.pack.add({
 	"https://github.com/kdheepak/lazygit.nvim",
 	"https://github.com/lewis6991/gitsigns.nvim",
 	"https://github.com/stevearc/conform.nvim",
+	"https://github.com/esmuellert/codediff.nvim",
 })
 
 require("oil").setup()
@@ -94,8 +95,13 @@ require("conform").setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
 		javascript = { "prettierd", "prettier", stop_after_first = true },
+		typescript = { "prettierd", "prettier", stop_after_first = true },
+		typescriptreact = { "prettierd", "prettier", stop_after_first = true },
+		javascriptreact = { "prettierd", "prettier", stop_after_first = true },
+		cpp = { "clang-format" },
 	},
 })
+require("codediff").setup()
 
 vim.cmd("colorscheme catppuccin-mocha")
 require("options")
