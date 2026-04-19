@@ -20,6 +20,8 @@ opt.scrolloff = 10
 opt.shiftround = true
 opt.clipboard = "unnamedplus"
 opt.laststatus = 3
+opt.colorcolumn = "80"
+opt.conceallevel = 2
 
 opt.expandtab = true
 opt.smartindent = true

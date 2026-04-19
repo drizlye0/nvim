@@ -41,6 +41,8 @@ end, { range = true })
 
 map("n", "<leader>f", "<cmd>Format<CR>")
 map("n", "<leader>lg", "<cmd>LazyGit<CR>")
+map("n", "<leader>fo", "<cmd>Obsidian quick_switch<CR>")
+map("n", "<leader>on", "<cmd>Obsidian new<CR>")
 --
 
 -- Maps
