@@ -20,7 +20,12 @@ vim.pack.add({
   "https://github.com/stevearc/conform.nvim",
   "https://github.com/esmuellert/codediff.nvim",
   "https://github.com/obsidian-nvim/obsidian.nvim",
-  "https://github.com/kylechui/nvim-surround"
+  "https://github.com/kylechui/nvim-surround",
+  "https://github.com/nvim-lua/plenary.nvim",
+  {
+    src = "https://github.com/theprimeagen/harpoon",
+    version = "harpoon2"
+  }
 })
 
 require("oil").setup()
@@ -113,6 +118,9 @@ require("obsidian").setup({
     },
   },
 })
+
+local harpoon2 = require("harpoon")
+harpoon2:setup()
 
 vim.cmd("colorscheme catppuccin-mocha")
 require("options")

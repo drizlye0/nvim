@@ -1,4 +1,5 @@
 local map = vim.keymap.set
+local harpoon = require("harpoon")
 
 -- Plugins
 map("n", "\\", "<cmd>Oil<CR>", { desc = "Open parent directory" })
@@ -43,6 +44,13 @@ map("n", "<leader>f", "<cmd>Format<CR>")
 map("n", "<leader>lg", "<cmd>LazyGit<CR>")
 map("n", "<leader>fo", "<cmd>Obsidian quick_switch<CR>")
 map("n", "<leader>on", "<cmd>Obsidian new<CR>")
+
+vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
+vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+
+-- Toggle previous & next buffers stored within Harpoon list
+vim.keymap.set("n", "<C-P>", function() harpoon:list():prev() end)
+vim.keymap.set("n", "<C-N>", function() harpoon:list():next() end)
 --
 
 -- Maps
