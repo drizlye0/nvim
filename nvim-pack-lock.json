@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "better-escape.nvim": {
+      "rev": "11660bc303772d9a34861a3f2d06f473752b4f69",
+      "src": "https://github.com/max397574/better-escape.nvim"
+    },
     "blink.cmp": {
       "rev": "456d38d1cd3743926f329204c2340f3e7840aad6",
       "src": "https://github.com/saghen/blink.cmp"
@@ -49,6 +53,10 @@
       "rev": "59bce2eef357189c3305e25bc6dd2d138c1683f5",
       "src": "https://github.com/windwp/nvim-autopairs"
     },
+    "nvim-jdtls": {
+      "rev": "77ccaeb422f8c81b647605da5ddb4a7f725cda90",
+      "src": "https://github.com/mfussenegger/nvim-jdtls"
+    },
     "nvim-lspconfig": {
       "rev": "8a9378a822719346a0288fa004dab302ca3c0a8f",
       "src": "https://github.com/neovim/nvim-lspconfig"
@@ -80,6 +88,10 @@
     "smart-splits.nvim": {
       "rev": "ba2850ff3d3b09785a7105c69d06a12117d4b97d",
       "src": "https://github.com/mrjones2014/smart-splits.nvim"
+    },
+    "speedtyper.nvim": {
+      "rev": "231bec830463bf8157ee1cfb42a4d7ce12334354",
+      "src": "https://github.com/NStefan002/speedtyper.nvim"
     },
     "tree-sitter-manager.nvim": {
       "rev": "fa63bc63ae08b661843d9976a43becfbd3daf76c",

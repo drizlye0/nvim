@@ -25,7 +25,9 @@ vim.pack.add({
   {
     src = "https://github.com/theprimeagen/harpoon",
     version = "harpoon2"
-  }
+  },
+  "https://github.com/mfussenegger/nvim-jdtls",
+  "https://github.com/max397574/better-escape.nvim"
 })
 
 require("oil").setup()
@@ -121,6 +123,7 @@ require("obsidian").setup({
 
 local harpoon2 = require("harpoon")
 harpoon2:setup()
+require("better_escape").setup()
 
 vim.cmd("colorscheme catppuccin-mocha")
 require("options")
