@@ -123,7 +123,18 @@ require("obsidian").setup({
 
 local harpoon2 = require("harpoon")
 harpoon2:setup()
-require("better_escape").setup()
+require("better_escape").setup({
+  default_mappings = false,
+
+  mappings = {
+    i = {
+      j = {
+        k = "<Esc>",
+        j = "<Esc>"
+      }
+    }
+  }
+})
 
 vim.cmd("colorscheme catppuccin-mocha")
 require("options")
