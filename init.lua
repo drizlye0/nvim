@@ -27,7 +27,8 @@ vim.pack.add({
     version = "harpoon2"
   },
   "https://github.com/mfussenegger/nvim-jdtls",
-  "https://github.com/max397574/better-escape.nvim"
+  "https://github.com/max397574/better-escape.nvim",
+  "https://github.com/rafamadriz/friendly-snippets",
 })
 
 require("oil").setup()
@@ -75,6 +76,7 @@ require("mason-tool-installer").setup({
     "lua_ls",
   },
 })
+-- require("luasnip.loaders.from_vscode").lazy_load()
 require("blink.cmp").setup({
   fuzzy = {
     implementation = "lua",
