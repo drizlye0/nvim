@@ -42,8 +42,6 @@ end, { range = true })
 
 map("n", "<leader>f", "<cmd>Format<CR>")
 map("n", "<leader>lg", "<cmd>LazyGit<CR>")
-map("n", "<leader>fo", "<cmd>Obsidian quick_switch<CR>")
-map("n", "<leader>on", "<cmd>Obsidian new<CR>")
 
 vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
 vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
@@ -52,6 +50,10 @@ vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:lis
 vim.keymap.set("n", "<C-P>", function() harpoon:list():prev() end)
 vim.keymap.set("n", "<C-N>", function() harpoon:list():next() end)
 --
+
+map("n", "<leader>t", "<cmd>ToggleTerm<CR>")
+map("n", "<leader>tv", "<cmd>TermNew direction=vertical<CR>")
+map("n", "<leader>tg", "<cmd>TermNew direction=horizontal<CR>")
 
 -- Maps
 map("i", "<C-b>", "<ESC>^i", { desc = "move beginning of line" })
@@ -63,3 +65,4 @@ map("i", "<C-k>", "<Up>", { desc = "move up" })
 
 map("n", "<leader>v", "<cmd>vsplit<CR>")
 map("n", "<leader>g", "<cmd>split<CR>")
+map("t", "<Esc><Esc>", "<C-\\><C-n>")

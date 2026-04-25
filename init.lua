@@ -19,7 +19,6 @@ vim.pack.add({
 	"https://github.com/lewis6991/gitsigns.nvim",
 	"https://github.com/stevearc/conform.nvim",
 	"https://github.com/esmuellert/codediff.nvim",
-	"https://github.com/obsidian-nvim/obsidian.nvim",
 	"https://github.com/kylechui/nvim-surround",
 	"https://github.com/nvim-lua/plenary.nvim",
 	{
@@ -29,6 +28,9 @@ vim.pack.add({
 	"https://github.com/mfussenegger/nvim-jdtls",
 	"https://github.com/max397574/better-escape.nvim",
 	"https://github.com/rafamadriz/friendly-snippets",
+	"https://github.com/ellisonleao/gruvbox.nvim",
+	"https://github.com/nvim-tree/nvim-web-devicons",
+	"https://github.com/akinsho/toggleterm.nvim",
 })
 
 require("oil").setup()
@@ -113,15 +115,6 @@ require("conform").setup({
 	},
 })
 require("codediff").setup()
-require("obsidian").setup({
-	legacy_commands = false, -- this will be removed in the next major release
-	workspaces = {
-		{
-			name = "personal",
-			path = "~/vaults/personal",
-		},
-	},
-})
 
 local harpoon2 = require("harpoon")
 harpoon2:setup()
@@ -138,7 +131,17 @@ require("better_escape").setup({
 	},
 })
 
-vim.cmd("colorscheme catppuccin-mocha")
+require("gruvbox").setup({
+	contrast = "hard",
+	bold = true,
+	overrides = {
+		SignColumn = { bg = "NONE" },
+	},
+})
+
+require("toggleterm").setup()
+
+vim.cmd("colorscheme gruvbox")
 require("options")
 require("keybinds")
 require("lsp")
