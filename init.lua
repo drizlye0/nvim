@@ -33,7 +33,11 @@ vim.pack.add({
 	"https://github.com/akinsho/toggleterm.nvim",
 })
 
-require("oil").setup()
+require("oil").setup({
+  view_options = {
+    show_hidden = true,
+  }
+})
 require("tree-sitter-manager").setup({
 	-- nohighlight = { "tsx"},
 	highlight = { "lua", "go" },
