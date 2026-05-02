@@ -29,15 +29,15 @@ vim.keymap.set("n", "<leader><leader>k", require("smart-splits").swap_buf_up)
 vim.keymap.set("n", "<leader><leader>l", require("smart-splits").swap_buf_right)
 
 vim.api.nvim_create_user_command("Format", function(args)
-	local range = nil
-	if args.count ~= -1 then
-		local end_line = vim.api.nvim_buf_get_lines(0, args.line2 - 1, args.line2, true)[1]
-		range = {
-			start = { args.line1, 0 },
-			["end"] = { args.line2, end_line:len() },
-		}
-	end
-	require("conform").format({ async = true, lsp_format = "fallback", range = range })
+  local range = nil
+  if args.count ~= -1 then
+    local end_line = vim.api.nvim_buf_get_lines(0, args.line2 - 1, args.line2, true)[1]
+    range = {
+      start = { args.line1, 0 },
+      ["end"] = { args.line2, end_line:len() },
+    }
+  end
+  require("conform").format({ async = true, lsp_format = "fallback", range = range })
 end, { range = true })
 
 map("n", "<leader>f", "<cmd>Format<CR>")
@@ -66,3 +66,15 @@ map("i", "<C-k>", "<Up>", { desc = "move up" })
 map("n", "<leader>v", "<cmd>vsplit<CR>")
 map("n", "<leader>g", "<cmd>split<CR>")
 map("t", "<Esc><Esc>", "<C-\\><C-n>")
+
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    local opts = { buffer = args.buf }
+
+    vim.keymap.set("n", "gw", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+    vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+    vim.keymap.set("n", "gv", "<cmd>vsplit | lua vim.lsp.buf.definition()<CR>", opts)
+    vim.keymap.set("n", "gh", "<cmd>split | lua vim.lsp.buf.definition()<CR>", opts)
+    vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+  end,
+})

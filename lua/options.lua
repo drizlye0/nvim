@@ -4,7 +4,6 @@ opt.number = true
 opt.relativenumber = true
 opt.numberwidth = 3
 opt.signcolumn = "yes"
-opt.guicursor = "i:block"
 opt.cursorline = true
 opt.breakindent = true
 opt.undofile = true
@@ -20,7 +19,6 @@ opt.scrolloff = 10
 opt.shiftround = true
 opt.clipboard = "unnamedplus"
 opt.laststatus = 3
-opt.colorcolumn = "80"
 opt.conceallevel = 2
 
 opt.expandtab = true
