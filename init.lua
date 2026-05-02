@@ -132,6 +132,12 @@ require("better_escape").setup({
         j = "<Esc>",
       },
     },
+    t = {
+      j = {
+        k = "<Esc>",
+        j = "<Esc>",
+      },
+    },
   },
 })
 
