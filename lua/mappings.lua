@@ -33,7 +33,8 @@ vim.keymap.set("n", "<A-k>", require("smart-splits").resize_up)
 vim.keymap.set("n", "<A-l>", require("smart-splits").resize_right)
 
 map("i", "jk", "<ESC>")
-map("n", "\\", "<cmd>NvimTreeToggle<CR>")
+map("i", "jj", "<ESC>")
+-- map("n", "\\", "<cmd>NvimTreeToggle<CR>")
 
 map({ "n", "x" }, "<leader>f", function()
   require("conform").format { lsp_fallback = true }
@@ -56,3 +57,8 @@ map("n", "<leader>v", "<cmd>vsplit<CR>", { desc = "Vertical split" })
 map("t", "<esc><esc>", "<C-\\><C-n>")
 map("n", "gw", "<cmd>lua vim.diagnostic.open_float()<CR>")
 map("n", "gs", "<cmd>LspClangdSwitchSourceHeader<CR>")
+map("n", "<S-l>", "<cmd>bnext<CR>")
+map("n", "<S-h>", "<cmd>bprev<CR>")
+map("n", "<S-c>", "<cmd>bdelete<CR>")
+
+vim.keymap.set("n", "\\", "<CMD>Oil<CR>", { desc = "Open parent directory" })
