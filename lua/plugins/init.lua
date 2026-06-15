@@ -31,6 +31,24 @@ return {
   -- test new blink
   { import = "nvchad.blink.lazyspec" },
 
+  {
+    "nvim-java/nvim-java",
+    lazy = false,
+    config = function()
+      require("java").setup({
+        spring_boot_tools = {
+          enable = false,
+        },
+
+        log = {
+          use_console = false,
+          use_file = false,
+        }
+      })
+      vim.lsp.enable "jdtls"
+    end,
+  },
+
   -- {
   -- 	"nvim-treesitter/nvim-treesitter",
   -- 	opts = {

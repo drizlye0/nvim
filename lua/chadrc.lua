@@ -6,7 +6,8 @@
 local M = {}
 
 M.base46 = {
-  theme = "kanagawa",
+  theme = "gruvchad",
+  transparency = true,
   ---@diagnostic disable: missing-fields
   changed_themes = {
     gruvbox = {

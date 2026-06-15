@@ -1,7 +1,7 @@
 require("nvchad.configs.lspconfig").defaults()
 
 --- @type vim.lsp.config
-  ---@diagnostic disable: missing-fields
+---@diagnostic disable: missing-fields
 vim.lsp.config.clangd = {
   cmd = {
     "clangd",
@@ -13,7 +13,7 @@ vim.lsp.config.clangd = {
   },
 }
 
-local servers = { "html", "cssls", "clangd", "gopls" }
+local servers = { "html", "cssls", "clangd", "gopls", "neocmake", "kotlin" }
 vim.lsp.enable(servers)
 
 -- read :h vim.lsp.config for changing options of lsp servers
