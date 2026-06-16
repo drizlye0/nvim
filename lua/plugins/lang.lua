@@ -1,0 +1,4 @@
+-- lazy.nvim
+return {
+  -- java
+}
