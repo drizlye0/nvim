@@ -21,3 +21,4 @@ map("n", "<leader>f", "<cmd>LazyFormat<CR>", { desc = "switch window up" })
 
 map("n", "<leader>v", "<cmd>vsplit<CR>")
 map("n", "<leader>g", "<cmd>split<CR>")
+map("n", "<leader>rn", "<cmd>IncRename<CR>")

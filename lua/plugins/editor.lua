@@ -15,14 +15,21 @@ return {
   },
 
   {
-    "ellisonleao/gruvbox.nvim",
+    "akinsho/bufferline.nvim",
+    enabled = false,
     config = function()
-      require("gruvbox").setup({
-        contrast = "hard",
+      require("bufferline").setup({
+        options = {
+          mode = "tabs",
+        },
       })
-
-      vim.cmd("colorscheme gruvbox")
     end,
+  },
+
+  {
+    "smjonas/inc-rename.nvim",
+    cmd = "IncRename",
+    config = true,
   },
 
   {
