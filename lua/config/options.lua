@@ -7,3 +7,4 @@ vim.opt.guicursor = "i:block"
 vim.g.lazyvim_ts_lsp = "tsgo"
 vim.g.lazyvim_check_order = false
 vim.opt.laststatus = 3
+vim.opt.list = false

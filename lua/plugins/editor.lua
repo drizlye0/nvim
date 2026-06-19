@@ -68,4 +68,36 @@ return {
       cmdline = { enabled = false },
     },
   },
+
+  {
+    "ibhagwan/fzf-lua",
+    opts = {
+      winopts = {
+        treesitter = { enabled = false },
+        preview = {
+          default = "bat",
+          layout = "vertical",
+        },
+      },
+
+      previewers = {
+        bat = {
+          cmd = "bat",
+          args = "--color=always --style=numbers,changes --theme=gruvbox-dark",
+        },
+      },
+    },
+  },
+
+  {
+    "esmuellert/codediff.nvim",
+    cmd = "CodeDiff",
+  },
+
+  {
+    "folke/snacks.nvim",
+    opts = {
+      indent = { enabled = false },
+    },
+  },
 }
