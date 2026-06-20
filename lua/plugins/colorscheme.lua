@@ -6,7 +6,7 @@ return {
         contrast = "hard",
       })
 
-      -- vim.cmd("colorscheme gruvbox")
+      vim.cmd("colorscheme gruvbox")
     end,
   },
   {
@@ -21,7 +21,7 @@ return {
       vim.g.gruvbox_material_background = "hard"
       vim.g.gruvbox_material_foreground = "mix"
       vim.g.gruvbox_material_transparent_background = true
-      vim.cmd.colorscheme("gruvbox-material")
+      -- vim.cmd.colorscheme("gruvbox-material")
     end,
   },
   {
