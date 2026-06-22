@@ -5,6 +5,7 @@ opt.relativenumber = true
 opt.numberwidth = 3
 opt.signcolumn = "yes"
 opt.cursorline = true
+opt.guicursor = "i:block"
 opt.breakindent = true
 opt.undofile = true
 opt.ignorecase = true
@@ -17,7 +18,7 @@ opt.list = false
 opt.inccommand = "split"
 opt.scrolloff = 10
 opt.shiftround = true
-opt.clipboard = "unnamedplus"
+opt.clipboard = ""
 opt.laststatus = 3
 opt.conceallevel = 2
 

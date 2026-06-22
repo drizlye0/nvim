@@ -1,9 +1,10 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+vim.pack.add({ 'https://github.com/saghen/blink.lib' })
+vim.pack.add({ "https://github.com/webhooked/kanso.nvim" })
 vim.pack.add({
   "https://github.com/stevearc/oil.nvim",
-  "https://github.com/catppuccin/nvim",
   "https://github.com/ibhagwan/fzf-lua",
   "https://github.com/romus204/tree-sitter-manager.nvim",
   "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
@@ -11,11 +12,9 @@ vim.pack.add({
   "https://github.com/mrjones2014/smart-splits.nvim",
   "https://github.com/windwp/nvim-ts-autotag",
   "https://github.com/mason-org/mason.nvim",
-  "https://github.com/saghen/blink.cmp",
   "https://github.com/neovim/nvim-lspconfig",
-  "https://github.com/mason-org/mason-lspconfig.nvim",           -- lspconfig bridge
+  "https://github.com/mason-org/mason-lspconfig.nvim",            -- lspconfig bridge
   "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim", -- auto installer
-  "https://github.com/kdheepak/lazygit.nvim",
   "https://github.com/lewis6991/gitsigns.nvim",
   "https://github.com/stevearc/conform.nvim",
   "https://github.com/esmuellert/codediff.nvim",
@@ -25,12 +24,12 @@ vim.pack.add({
     src = "https://github.com/theprimeagen/harpoon",
     version = "harpoon2",
   },
+  {
+    src = "https://github.com/saghen/blink.cmp",
+  },
   "https://github.com/max397574/better-escape.nvim",
   "https://github.com/rafamadriz/friendly-snippets",
-  "https://github.com/ellisonleao/gruvbox.nvim",
   "https://github.com/nvim-tree/nvim-web-devicons",
-  "https://github.com/akinsho/toggleterm.nvim",
-  "https://github.com/webhooked/kanso.nvim"
 })
 
 require("oil").setup({
@@ -141,19 +140,19 @@ require("better_escape").setup({
   },
 })
 
-require("gruvbox").setup({
-  contrast = "hard",
-  bold = true,
-  overrides = {
-    SignColumn = { bg = "NONE" },
-  },
+require("kanso").setup({
+  foreground = "saturated",
+  transparent = true,
+  overrides = function()
+    return {
+      StatusLine = { bg = "#313332" },
+      StatusLineNC = { bg = "#313332" }
+    }
+  end
 })
 
-require("kanso").setup()
-
-require("toggleterm").setup()
-
 vim.cmd("colorscheme kanso")
+
 require("options")
 require("keybinds")
 require("lsp")
