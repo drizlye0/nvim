@@ -18,7 +18,7 @@ opt.list = false
 opt.inccommand = "split"
 opt.scrolloff = 10
 opt.shiftround = true
-opt.clipboard = ""
+opt.clipboard = "unnamedplus"
 opt.laststatus = 3
 opt.conceallevel = 2
 

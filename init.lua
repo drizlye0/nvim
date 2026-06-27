@@ -150,7 +150,6 @@ require("kanso").setup({
     }
   end
 })
-
 vim.cmd("colorscheme kanso")
 
 require("options")
