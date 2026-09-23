@@ -3,9 +3,10 @@ vim.g.maplocalleader = " "
 
 vim.pack.add({ 'https://github.com/saghen/blink.lib' })
 vim.pack.add({ "https://github.com/webhooked/kanso.nvim" })
-vim.pack.add({
-  "https://github.com/stevearc/oil.nvim",
-  "https://github.com/ibhagwan/fzf-lua",
+vim.pack.add({ "https://github.com/sschleemilch/slimline.nvim" })
+vim.pack.add({ "https://github.com/nvim-telescope/telescope.nvim" })
+vim.pack.add({ "https://github.com/nvim-telescope/telescope-fzf-native.nvim" })
+vim.pack.add({ "https://github.com/stevearc/oil.nvim",
   "https://github.com/romus204/tree-sitter-manager.nvim",
   "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
   "https://github.com/windwp/nvim-autopairs",
@@ -41,36 +42,6 @@ require("tree-sitter-manager").setup({
   -- nohighlight = { "tsx"},
   highlight = { "lua", "go" },
 })
-require("fzf-lua").setup({
-  winopts = {
-    preview = {
-      layout = "vertical",
-    },
-
-    treesitter = {
-      enabled = false,
-    },
-  },
-
-  "hide",
-
-  file_ignore_patterns = {
-    "node_modules/",
-    ".dart_tool/",
-    ".idea/",
-    "build/",
-    ".git",
-  },
-
-  previewers = {
-    builtin = {
-      treesitter = {
-        enabled = false,
-      },
-    },
-  },
-})
-require("fzf-lua").register_ui_select()
 require("nvim-autopairs").setup()
 require("smart-splits").setup()
 require("nvim-ts-autotag").setup()
@@ -142,15 +113,60 @@ require("better_escape").setup({
 
 require("kanso").setup({
   foreground = "saturated",
-  transparent = true,
+  transparent = false,
   overrides = function()
     return {
-      StatusLine = { bg = "#313332" },
-      StatusLineNC = { bg = "#313332" }
+      StatusLine = { bg = "#22262d" },
+      StatusLineNC = { bg = "#22262d" }
     }
   end
 })
 vim.cmd("colorscheme kanso")
+
+require("slimline").setup({
+  style = 'fg',
+  bold = true,
+  configs = {
+    mode = {
+      verbose = true,
+    },
+    path = {
+      hl = {
+        primary = 'Label',
+      },
+    },
+    git = {
+      hl = {
+        primary = 'Function',
+      },
+    },
+    filetype_lsp = {
+      hl = {
+        primary = 'String',
+      },
+    },
+  },
+
+  hl = {
+    base = 'StatusLine', -- highlight of the background
+  }
+})
+
+require("telescope").setup({
+  extensions = {
+    fzf = {
+      fuzzy = true,
+      override_generic_sorter = true, -- override the generic sorter
+      override_file_sorter = true,    -- override the file sorter
+      case_mode = "smart_case",
+    }
+  }
+})
+
+local builtin = require("telescope.builtin")
+vim.keymap.set("n", "<leader>ff", builtin.find_files)
+vim.keymap.set("n", "<leader>fw", builtin.live_grep)
+vim.keymap.set("n", "<leader>fb", builtin.buffers)
 
 require("options")
 require("keybinds")
