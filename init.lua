@@ -1,11 +1,13 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+vim.pack.add({ "https://github.com/jake-stewart/multicursor.nvim" })
 vim.pack.add({ 'https://github.com/saghen/blink.lib' })
 vim.pack.add({ "https://github.com/webhooked/kanso.nvim" })
 vim.pack.add({ "https://github.com/sschleemilch/slimline.nvim" })
 vim.pack.add({ "https://github.com/nvim-telescope/telescope.nvim" })
 vim.pack.add({ "https://github.com/nvim-telescope/telescope-fzf-native.nvim" })
+vim.pack.add({ "https://github.com/nvim-tree/nvim-tree.lua" })
 vim.pack.add({ "https://github.com/stevearc/oil.nvim",
   "https://github.com/romus204/tree-sitter-manager.nvim",
   "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
@@ -21,10 +23,6 @@ vim.pack.add({ "https://github.com/stevearc/oil.nvim",
   "https://github.com/esmuellert/codediff.nvim",
   "https://github.com/kylechui/nvim-surround",
   "https://github.com/nvim-lua/plenary.nvim",
-  {
-    src = "https://github.com/theprimeagen/harpoon",
-    version = "harpoon2",
-  },
   {
     src = "https://github.com/saghen/blink.cmp",
   },
@@ -90,8 +88,6 @@ require("conform").setup({
 })
 require("codediff").setup()
 
-local harpoon2 = require("harpoon")
-harpoon2:setup()
 require("better_escape").setup({
   default_mappings = false,
 
@@ -121,7 +117,7 @@ require("kanso").setup({
     }
   end
 })
-vim.cmd("colorscheme kanso")
+vim.cmd("colorscheme kanso-zen")
 
 require("slimline").setup({
   style = 'fg',
@@ -162,6 +158,9 @@ require("telescope").setup({
     }
   }
 })
+
+require("nvim-tree").setup()
+require("multicursor-nvim").setup()
 
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", builtin.find_files)

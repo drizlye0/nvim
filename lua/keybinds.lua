@@ -1,12 +1,33 @@
 local map = vim.keymap.set
-local harpoon = require("harpoon")
+local set = vim.keymap.set
+local mc = require("multicursor-nvim")
 
 -- Plugins
 map("n", ';', ":")
 map("n", "\\", "<cmd>Oil<CR>", { desc = "Open parent directory" })
+map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>")
 
 -- map("n", "<leader>ff", "<cmd>FzfLua files<CR>")
 -- map("n", "<leader>fw", "<cmd>FzfLua live_grep<CR>")
+---- Add or skip cursor above/below the main cursor.
+set({ "n", "x" }, "<up>", function() mc.lineAddCursor(-1) end)
+set({ "n", "x" }, "<down>", function() mc.lineAddCursor(1) end)
+set({ "n", "x" }, "<leader><up>", function() mc.lineSkipCursor(-1) end)
+set({ "n", "x" }, "<leader><down>", function() mc.lineSkipCursor(1) end)
+
+-- Add or skip adding a new cursor by matching word/selection
+set({ "n", "x" }, "<leader>n", function() mc.matchAddCursor(1) end)
+set({ "n", "x" }, "<leader>s", function() mc.matchSkipCursor(1) end)
+set({ "n", "x" }, "<leader>N", function() mc.matchAddCursor(-1) end)
+set({ "n", "x" }, "<leader>S", function() mc.matchSkipCursor(-1) end)
+
+-- Add and remove cursors with control + left click.
+set("n", "<c-leftmouse>", mc.handleMouse)
+set("n", "<c-leftdrag>", mc.handleMouseDrag)
+set("n", "<c-leftrelease>", mc.handleMouseRelease)
+
+-- Disable and enable cursors.
+set({ "n", "x" }, "<c-q>", mc.toggleCursor)
 
 vim.keymap.set("n", "<A-h>", require("smart-splits").resize_left)
 vim.keymap.set("n", "<A-j>", require("smart-splits").resize_down)
@@ -46,12 +67,12 @@ map("n", "<leader>f", "<cmd>Format<CR>")
 map("n", "<leader>lg", "<cmd>LazyGit<CR>")
 map("n", "<leader>ld", "<cmd>VscodeDiff<CR>")
 
-vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
-vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+-- vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
+-- vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
 -- Toggle previous & next buffers stored within Harpoon list
-vim.keymap.set("n", "<C-P>", function() harpoon:list():prev() end)
-vim.keymap.set("n", "<C-N>", function() harpoon:list():next() end)
+-- vim.keymap.set("n", "<C-P>", function() harpoon:list():prev() end)
+-- vim.keymap.set("n", "<C-N>", function() harpoon:list():next() end)
 --
 
 map("n", "<leader>t", "<cmd>ToggleTerm<CR>")
