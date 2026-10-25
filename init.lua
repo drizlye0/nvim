@@ -1,6 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+vim.pack.add({ 'https://github.com/ellisonleao/gruvbox.nvim' })
 vim.pack.add({ 'https://github.com/saghen/blink.lib' })
 vim.pack.add({ "https://github.com/webhooked/kanso.nvim" })
 vim.pack.add({ "https://github.com/sschleemilch/slimline.nvim" })
@@ -111,17 +112,23 @@ require("better_escape").setup({
   },
 })
 
-require("kanso").setup({
-  foreground = "saturated",
-  transparent = false,
-  overrides = function()
-    return {
-      StatusLine = { bg = "#22262d" },
-      StatusLineNC = { bg = "#22262d" }
-    }
-  end
+-- require("kanso").setup({
+--   foreground = "saturated",
+--   transparent = false,
+--   overrides = function()
+--     return {
+--       StatusLine = { bg = "#22262d" },
+--       StatusLineNC = { bg = "#22262d" }
+--     }
+--   end
+-- })
+
+require("gruvbox").setup({
+  contrast = "hard",
+  transparent_mode = true,
 })
-vim.cmd("colorscheme kanso")
+
+vim.cmd("colorscheme gruvbox")
 
 require("slimline").setup({
   style = 'fg',
@@ -148,7 +155,7 @@ require("slimline").setup({
   },
 
   hl = {
-    base = 'StatusLine', -- highlight of the background
+    base = 'NormalBC', -- highlight of the background
   }
 })
 

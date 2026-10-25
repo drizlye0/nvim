@@ -3,6 +3,7 @@ local opt = vim.opt
 opt.number = true
 opt.relativenumber = true
 opt.numberwidth = 3
+opt.shell = "/usr/bin/zsh"
 opt.signcolumn = "yes"
 opt.cursorline = true
 opt.guicursor = "i:block"

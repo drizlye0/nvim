@@ -8,6 +8,8 @@ map("n", "\\", "<cmd>Oil<CR>", { desc = "Open parent directory" })
 -- map("n", "<leader>ff", "<cmd>FzfLua files<CR>")
 -- map("n", "<leader>fw", "<cmd>FzfLua live_grep<CR>")
 
+vim.keymap.set("n", "<S-l>", "<cmd>bnext<CR>")
+vim.keymap.set("n", "<S-h>", "<cmd>bprev<CR>")
 vim.keymap.set("n", "<A-h>", require("smart-splits").resize_left)
 vim.keymap.set("n", "<A-j>", require("smart-splits").resize_down)
 vim.keymap.set("n", "<A-k>", require("smart-splits").resize_up)
