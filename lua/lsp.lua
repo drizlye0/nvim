@@ -11,6 +11,7 @@ vim.lsp.config.clangd = {
 
 vim.lsp.enable({
   "lua_ls",
+  "tsgo"
 })
 
 vim.diagnostic.config({
