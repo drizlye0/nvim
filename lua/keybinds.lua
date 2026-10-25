@@ -5,8 +5,6 @@ local harpoon = require("harpoon")
 map("n", ';', ":")
 map("n", "\\", "<cmd>Oil<CR>", { desc = "Open parent directory" })
 
--- map("n", "<leader>ff", "<cmd>FzfLua files<CR>")
--- map("n", "<leader>fw", "<cmd>FzfLua live_grep<CR>")
 
 vim.keymap.set("n", "<S-l>", "<cmd>bnext<CR>")
 vim.keymap.set("n", "<S-h>", "<cmd>bprev<CR>")
