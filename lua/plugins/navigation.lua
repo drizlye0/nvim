@@ -6,6 +6,7 @@ vim.pack.add({
     src = "https://github.com/theprimeagen/harpoon",
     version = "harpoon2",
   },
+  "https://github.com/nvim-tree/nvim-tree.lua"
 })
 
 require("oil").setup({
@@ -13,5 +14,6 @@ require("oil").setup({
     show_hidden = true,
   }
 })
+require("nvim-tree").setup()
 require("smart-splits").setup()
 require("harpoon"):setup()

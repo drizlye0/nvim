@@ -4,6 +4,7 @@ local harpoon = require("harpoon")
 -- Plugins
 map("n", ';', ":")
 map("n", "\\", "<cmd>Oil<CR>", { desc = "Open parent directory" })
+map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Open directory tree"})
 
 
 vim.keymap.set("n", "<S-l>", "<cmd>bnext<CR>")
