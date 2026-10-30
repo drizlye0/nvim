@@ -4,32 +4,35 @@ local harpoon = require("harpoon")
 -- Plugins
 map("n", ';', ":")
 map("n", "\\", "<cmd>Oil<CR>", { desc = "Open parent directory" })
-map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Open directory tree"})
+map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Open directory tree" })
 
 
 vim.keymap.set("n", "<S-l>", "<cmd>bnext<CR>")
 vim.keymap.set("n", "<S-h>", "<cmd>bprev<CR>")
-vim.keymap.set("n", "<A-h>", require("smart-splits").resize_left)
-vim.keymap.set("n", "<A-j>", require("smart-splits").resize_down)
-vim.keymap.set("n", "<A-k>", require("smart-splits").resize_up)
-vim.keymap.set("n", "<A-l>", require("smart-splits").resize_right)
+
+vim.keymap.set("n", "<A-h>", function()
+  require("herdr-splits").resize_left()
+end)
+vim.keymap.set("n", "<A-j>", function() require("herdr-splits").resize_down() end)
+vim.keymap.set("n", "<A-k>", function() require("herdr-splits").resize_up() end)
+vim.keymap.set("n", "<A-l>", function() require("herdr-splits").resize_right() end)
 -- moving between splits
-vim.keymap.set("n", "<C-h>", require("smart-splits").move_cursor_left)
-vim.keymap.set("n", "<C-j>", require("smart-splits").move_cursor_down)
-vim.keymap.set("n", "<C-k>", require("smart-splits").move_cursor_up)
-vim.keymap.set("n", "<C-l>", require("smart-splits").move_cursor_right)
-vim.keymap.set("n", "<C-\\>", require("smart-splits").move_cursor_previous)
+vim.keymap.set("n", "<C-h>", function()
+  require("herdr-splits").move_cursor_left()
+end)
+vim.keymap.set("n", "<C-j>", function()
+  require("herdr-splits").move_cursor_down()
+end)
 
-vim.keymap.set("t", "<C-h>", require("smart-splits").move_cursor_left)
-vim.keymap.set("t", "<C-j>", require("smart-splits").move_cursor_down)
-vim.keymap.set("t", "<C-k>", require("smart-splits").move_cursor_up)
-vim.keymap.set("t", "<C-l>", require("smart-splits").move_cursor_right)
-vim.keymap.set("t", "<C-\\>", require("smart-splits").move_cursor_previous)
+vim.keymap.set("n", "<C-k>", function()
+  require("herdr-splits").move_cursor_up()
+end)
 
-vim.keymap.set("n", "<leader><leader>h", require("smart-splits").swap_buf_left)
-vim.keymap.set("n", "<leader><leader>j", require("smart-splits").swap_buf_down)
-vim.keymap.set("n", "<leader><leader>k", require("smart-splits").swap_buf_up)
-vim.keymap.set("n", "<leader><leader>l", require("smart-splits").swap_buf_right)
+vim.keymap.set("n", "<C-l>", function()
+  require("herdr-splits").move_cursor_right()
+end
+)
+
 
 vim.api.nvim_create_user_command("Format", function(args)
   local range = nil
